@@ -517,7 +517,7 @@ async def executeText(pool, sender_id, channel, conn, text: str) -> dict:
         parsed_data = json.loads(corrected_names)
     except Exception as e:
         print(f"❌ Error: {e}", corrected_names)
-        with open("conclusions.txt", "a") as f:
+        with open("conclusions.txt", "a", encoding='utf-8') as f:
             f.write(f"{time.asctime()}: Error: {e}, text: {text}\n")
         return ""
 
